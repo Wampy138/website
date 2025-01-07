@@ -102,7 +102,7 @@ body {
 /* Hero Section */
 .hero {
     height: 600px;
-    background-image: url('IMG_4343.png');
+    background-image: url('IMG_4343.PNG');
     background-size: 110%; /* Slightly larger to allow zoom */
     background-position: 0% 50%; /* Start position for wind */
     animation: zoomWindEffect 30s linear infinite;
@@ -283,7 +283,7 @@ body {
 }
 /* Newsletter Subscription Bar Styling */
 .newsletter {
-    background-image: url('Honey2.png') ;
+    background-image: url('Honey2.PNG') ;
     background-size: cover;
     background-position: top center;
     padding: 30px 20px;
@@ -808,7 +808,7 @@ footer {
 
 #mission-hero {
     height:600px;
-    background-image: url('IMG_4567.png');
+    background-image: url('IMG_4567.PNG');
     background-size: 120%; /* Slightly larger to allow zoom */
     background-position: 0% 50%; /* Start position for wind */
     animation: zoomWindEffect 30s linear infinite;
