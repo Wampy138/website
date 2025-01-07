@@ -1,0 +1,1147 @@
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.logo img {
+    width: 210px;
+    height: auto;
+    margin-right: 15px;
+    justify-content: center
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.navbar:hover {
+    background-color: rgba(41, 49, 51, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    position: relative;
+    margin: 0 10px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    display: block;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+   
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    opacity: 0; /* Set opacity to 0 to prevent visual issues */
+    position: absolute;
+    background-color: rgba(41, 49, 51, 0.7); /* Transparent anthracite background */
+    min-width: 200px;
+    box-shadow: none; /* Initially no shadow */
+    z-index: 1;
+    border-radius: 5px;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for visibility */
+    padding: 0;
+    visibility: hidden; /* Ensure it's fully hidden */
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+    visibility: visible; /* Make the dropdown visible */
+    opacity: 1; /* Fade in smoothly */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow when visible */
+    opacity: 5;
+    padding: 12px 16px;
+    color: white; /* Text color for dropdown */
+    text-decoration: none;
+}
+
+/* Dropdown content link styling */
+.dropdown-content li {
+    text-align: left;
+    margin-left: 0;
+}
+
+.dropdown-content li a {
+    padding: 12px 16px;
+    color: white; /* Text color for dropdown */
+    text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+    background-color: rgba(64, 224, 208, 0.3); /* Add hover effect */
+    color: white;
+}
+/* Hero Section */
+.hero {
+    height: 600px;
+    background-image: url('IMG_4343.png');
+    background-size: 110%; /* Slightly larger to allow zoom */
+    background-position: 0% 50%; /* Start position for wind */
+    animation: zoomWindEffect 30s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 69, 0.4);
+    transition: background 0.3s ease;	
+    
+}
+
+@keyframes zoomWindEffect {
+    0% {
+        background-size: 100%; /* Normal size */
+        background-position: 0% 50%; /* Start from left */
+    }
+    50% {
+        background-size: 120%; /* Zoom in */
+        background-position: 50% 50%; /* Move to center */
+    }
+    100% {
+        background-size: 100%; /* Back to normal size */
+        background-position: 100% 50%; /* Move to right */
+    }
+}
+
+
+.hero-content h1 {
+    font-size: 48px;
+    margin: 0;
+    font-weight: 300;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin: 20px 0;
+    font-weight: 500;
+}
+@media (max-width: 768px) {
+   .hero {
+    background-height: 100vh;
+    background-position: top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+   }
+@keyframes zoomWindEffect {
+    0% {
+        background-size: 200vh; /* Normal size */
+        background-position: 0% 50%; /* Start from left */
+    }
+    50% {
+        background-size: 240vh; /* Zoom in */
+        background-position: 50% 50%; /* Move to center */
+    }
+    100% {
+        background-size: 200vh; /* Back to normal size */
+        background-position: 100% 50%; /* Move to right */
+    }
+}
+}
+
+.cta-button {
+    background-color: #17870d;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.cta-button:hover {
+    background-color: #144540
+}
+
+.cta-button:hover ~ .background-overlay {
+  background: rgba(0, 0, 0, 0);
+}
+
+/* Trusted By Section */
+.trusted-by {
+    padding: 50px 50px;
+    background-color: #ffffff;
+    color: white;
+    text-align: center;
+}
+
+.trusted-by h2 {
+    color: #f6f6f6;
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.trusted-by .clients img {
+    max-width: 500px;
+    margin: 0px;
+}
+
+/* Services Section */
+#services {
+    padding: 50px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+#services h2 {
+    color: #293133;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.service-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 40px);
+    max-width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-item h3 {
+    color: #144540;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    color: #131b1a;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.learn-more {
+    background-color: #17870d;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.learn-more:hover {
+    background-color: #144540;
+}
+
+/* Social Media Icons Styling */
+.social-media {
+    background-color: #ffffff;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.social-media a img {
+    width: 40px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-media a img:hover {
+    transform: scale(1.2); /* Enlarge icons slightly on hover */
+}
+/* Newsletter Subscription Bar Styling */
+.newsletter {
+    background-image: url('Honey2.png') ;
+    background-size: cover;
+    background-position: top center;
+    padding: 30px 20px;
+    text-align: center;
+    margin: 30px 0;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 69, 0.4);
+    transition: background 0.3s ease;	
+}
+.newsletter h3 {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #17870;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #17870d;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter button:hover {
+    background-color: #144540; /* Slightly darker on hover */
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #ffffff;
+    color: #293133;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-right ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-right ul li {
+    margin-left: 20px;
+}
+
+.footer-right ul li a {
+    color: #293133;
+    text-decoration: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar ul li {
+        margin: 5px 0;
+    }
+
+    .service-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .service-item {
+        width: 100%;
+    }
+
+    .trusted-by .clients img {
+        max-width: 100px;
+    }
+}
+/* General Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 30px;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.navbar:hover {
+    background-color: rgba(41, 49, 51, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 10px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Responsive Navbar for Mobile */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+    
+    .logo {
+	margin-left: auto;
+	position: absolute;
+	top: 0px;
+	right: 20px;
+}
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar ul {
+        display: none; /* Hide the menu by default */
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+        background-color: rgba(41, 49, 51, 0.7);
+        padding: 10px 0;
+        border-radius: 5px;
+    }
+
+    .navbar ul li {
+        margin: 5px 0;
+    }
+
+    .navbar ul.show {
+        display: flex; /* Show the menu when toggled */
+    }
+}
+/* Trusted By Section */
+.trusted-by {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #ffffff; /* Optional background color */
+    color: #293133;
+}
+
+.trusted-by h2 {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    color: #293130;
+}
+
+.trusted-by .clients {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between images */
+    flex-wrap: wrap; /* Ensures images wrap on smaller screens */
+}
+
+.trusted-by .client {
+    position: relative;
+    width: 200px; /* Fixed width for all images */
+    height: 200px; /* Fixed height for all images */
+    overflow: hidden; /* Ensures hover effects don't go outside bounds */
+    border-radius: 10px; /* Optional: Rounded corners for images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    transition: transform 0.3s ease; /* Smooth hover animation */
+}
+
+.trusted-by .client img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the container */
+    transition: transform 0.3s ease; /* Smooth scale-up on hover */
+}
+
+.trusted-by .client:hover img {
+    transform: scale(1.2); /* Enlarges the image by 20% */
+}
+
+.trusted-by .client .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%; /* Adjust height of overlay */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.2;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease; /* Fade-in effect */
+}
+
+.trusted-by .client:hover .overlay {
+    opacity: 1; /* Shows the overlay on hover */
+}
+/* Testimonials Section Styling */
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+.testimonial {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between image and content */
+}
+
+/* Circular Image Styling */
+.testimonial-image {
+    flex-shrink: 0; /* Prevent shrinking of the image */
+    width: 80px; /* Adjust size as needed */
+    height: 80px;
+    border-radius: 50%; /* Make the image circular */
+    overflow: hidden;
+    border: 2px solid #293133; /* Optional: Border for the image */
+}
+
+.testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image fits properly */
+}
+
+/* Testimonial Content Styling */
+.testimonial-content {
+    max-width: 600px; /* Limit the width of the text */
+}
+
+.testimonial-text {
+    font-size: 16px;
+    color: #333; /* Dark text color */
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    font-size: 14px;
+    font-weight: bold;
+    color: #17870d; /* Accent color for the author name */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .testimonials {
+        padding: 20px 10px;
+    }
+
+    .testimonial {
+        flex-direction: column; /* Stack image and text vertically */
+        text-align: center;
+    }
+
+    .testimonial-content {
+        max-width: 100%; /* Allow full width */
+    }
+}
+
+
+/* Contact page */
+.contact {
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background-color: #f9f9f9;
+
+}
+
+
+
+.contact h1 {
+
+    color: #144540;
+
+    font-size: 32px;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.contact-grid {
+
+    display: flex;
+
+    gap: 40px;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+}
+
+
+
+.contact-info,
+
+.contact-form {
+
+    flex: 1;
+
+    max-width: 500px;
+
+}
+
+
+
+.contact-form form input,
+
+.contact-form form textarea {
+
+    width: 100%;
+
+    margin-bottom: 10px;
+
+    padding: 10px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+}
+
+
+
+.contact-form form button {
+
+    background-color: #17870d;
+
+    color: white;
+
+    padding: 10px 20px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+}
+
+
+.contact-form form button:hover {
+
+    background-color: #144540;
+
+}
+
+/* news page */
+
+/* News Section */
+
+.news {
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+}
+
+
+
+.news-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+    margin-top: 80px;
+
+}
+
+
+
+.news-item img {
+
+    width: 150px;
+
+    height: auto;
+
+    border-radius: 5px;
+
+}
+
+
+
+.news-text {
+
+    text-align: left;
+
+}
+
+
+
+.news-text h2 {
+
+    font-size: 20px;
+
+    color: #144540;
+
+}
+
+/* Mission Section styling*/
+.mission {
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: justify;
+   
+;
+}
+.mission h1, .mission h2 {
+    color: #293133;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+.mission p strong {
+    text-collor: #40e0d0;
+    padding: 2px 4px;
+    font-weight: 500;
+}
+.mission a {
+    text-color #144540;
+    text-decoration: underline; 
+    transition: color 0.3s ease;
+}
+.mission a hover {
+    color: #40e0d0;
+}
+.mission {
+    opactity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.vision {
+    padding: 50px 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: justify;
+}
+.vision h1, .vision h2 {
+    color: #293133;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+.vision p strong {
+    text-collor: #40e0d0;
+    padding: 2px 4px;
+    font-weight: 500;
+}
+.vision a {
+    text-color #144540;
+    text-decoration: underline; 
+    transition: color 0.3s ease;
+}
+.vision a hover {
+    color: #40e0d0;
+}
+.vision {
+    opactity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+
+#mission-hero {
+    height:600px;
+    background-image: url('IMG_4567.png');
+    background-size: 120%; /* Slightly larger to allow zoom */
+    background-position: 0% 50%; /* Start position for wind */
+    animation: zoomWindEffect 30s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-blend-mode: overlay;
+    background-color: rgba(41, 49, 51, 0.3);
+    transition: background 0.3s ease;	
+    
+}
+
+#mission-hero h1 {
+    Position: flex
+    text-align: right;
+    padding: 50px 20px;
+}
+
+@keyframes zoomWindEffect {
+    0% {
+        background-size: 122%; /* Normal size */
+        background-position: 0% 50%; /* Start from left */
+    }
+    50% {
+        background-size: 140%; /* Zoom in */
+        background-position: 50% 50%; /* Move to center */
+    }
+    100% {
+        background-size: 122%; /* Back to normal size */
+        background-position: 100% 50%; /* Move to right */
+    }
+}
+
+@media (max-width: 768px) {
+   #mission-hero {
+    background-height: 100vh;
+    background-position: top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+   }
+@keyframes zoomWindEffect {
+    0% {
+        background-size: 200vh; /* Normal size */
+        background-position: 0% 50%; /* Start from left */
+    }
+    50% {
+        background-size: 240vh; /* Zoom in */
+        background-position: 50% 50%; /* Move to center */
+    }
+    100% {
+        background-size: 200vh; /* Back to normal size */
+        background-position: 100% 50%; /* Move to right */
+    }
+}
+}
+
+
+
+/* Chat button styling */
+
+.chat-button {
+
+    position: fixed;
+
+    bottom: 20px;
+
+    right: 20px;
+
+    width: 60px;
+
+    height: 60px;
+
+    background-color: #28a745; /* Green background */
+
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    z-index: 1000;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+
+
+/* Chat popup styling */
+
+.chat-popup {
+
+    position: fixed;
+
+    bottom: 90px;
+
+    right: 20px;
+
+    width: 300px;
+
+    padding: 15px;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    display: none; /* Hidden by default */
+
+    z-index: 1000;
+
+}
+.chat-button {
+   background-color: rgba(41, 49, 51, 0.9);
+}
+
+
+
+/* Hover effect for chat button */
+
+.chat-button:hover {
+
+    background-color: #17870d;
+
+}
+@media (max-width: 600px) {
+
+    .chat-popup {
+
+        width: 90%;
+
+        right: 5%;
+
+    }
+
+}
+
+#whoweare {
+    height:600px;
+    background-image: url('whoweare.JPEG');
+    background-size: 120%; /* Slightly larger to allow zoom */
+    background-position: 0% 50%; /* Start position for wind */
+    animation: zoomWindEffect 30s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-blend-mode: overlay;
+    background-color: rgba(41, 49, 51, 0.3);
+    transition: background 0.3s ease;	
+    
+}
+
+#whoweare h1 {
+    Position: flex
+    text-align: right;
+    padding: 50px 20px;
+}
+
+@keyframes zoomWindEffect {
+    0% {
+        background-size: 122%; /* Normal size */
+        background-position: 0% 50%; /* Start from left */
+    }
+    50% {
+        background-size: 140%; /* Zoom in */
+        background-position: 50% 50%; /* Move to center */
+    }
+    100% {
+        background-size: 122%; /* Back to normal size */
+        background-position: 100% 50%; /* Move to right */
+    }
+}
+
+@media (max-width: 768px) {
+   #whoweare {
+    background-height: 100vh;
+    background-position: top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+   }
+@keyframes zoomWindEffect {
+    0% {
+        background-size: 200vh; /* Normal size */
+        background-position: 0% 50%; /* Start from left */
+    }
+    50% {
+        background-size: 240vh; /* Zoom in */
+        background-position: 50% 50%; /* Move to center */
+    }
+    100% {
+        background-size: 200vh; /* Back to normal size */
+        background-position: 100% 50%; /* Move to right */
+    }
+}
+}
+.Intro {
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: justify;
+   
+;
+}
+.Intro h1, .Intro h2 {
+    color: #293133;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+.Intro <p> strong {
+    text-collor: #40e0d0;
+    padding: 2px 4px;
+    font-weight: 500;
+}
+.Intro a {
+    text-color #144540;
+    text-decoration: underline; 
+    transition: color 0.3s ease;
+}
+.Intro a hover {
+    color: #40e0d0;
+}
+.Intro {
+    opactity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.Personal {
+    padding: 50px 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: justify;
+}
+.Personal h1, .Personal h2 {
+    color: #293133;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+.Personal <p> strong {
+    text-collor: #40e0d0;
+    padding: 2px 4px;
+    font-weight: 500;
+}
+.Personal <a> {
+    text-color #144540;
+    text-decoration: underline; 
+    transition: color 0.3s ease;
+}
+.Personal <a> hover {
+    color: #40e0d0;
+}
+.Personal {
+    opactity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+}
+.Values {
+    padding: 50px 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: justify;
+}
+.Values h1, .Values h2 {
+    color: #293133;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+.Values <p> strong {
+    text-collor: #40e0d0;
+    padding: 2px 4px;
+    font-weight: 500;
+}
+.Values <a> {
+    text-color #144540;
+    text-decoration: underline; 
+    transition: color 0.3s ease;
+}
+.Values <a> hover {
+    color: #40e0d0;
+}
+.Values {
+    opactity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+}
+.WWA-CTA {
+    padding: 50px 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+.WWA-CTA h1, .WWA-CTA h2 {
+    color: #293133;
+    padding: 50px 20px;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+.WWA-CTA <p> strong {
+    text-collor: #40e0d0;
+    padding: 2px 4px;
+    font-weight: 500;
+}
+.WWA-CTA <a> {
+    text-color #144540;
+    text-decoration: underline; 
+    transition: color 0.3s ease;
+}
+.WWA-CTA <a> hover {
+    color: #40e0d0;
+}
+.WWA-CTA {
+    opactity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+}
